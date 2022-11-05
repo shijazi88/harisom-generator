@@ -67,6 +67,76 @@
                 </ul>
             </li>
         @endcan
+        @can('user_alert_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.user-alerts.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/user-alerts") || request()->is("admin/user-alerts/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-bell c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.userAlert.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('car_model_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.car-models.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/car-models") || request()->is("admin/car-models/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.carModel.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('package_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.packages.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/packages") || request()->is("admin/packages/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.package.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('package_period_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.package-periods.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/package-periods") || request()->is("admin/package-periods/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.packagePeriod.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('question_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.questions.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/questions") || request()->is("admin/questions/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.question.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('answer_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.answers.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/answers") || request()->is("admin/answers/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.answer.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('sms_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.smss.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/smss") || request()->is("admin/smss/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.sms.title') }}
+                </a>
+            </li>
+        @endcan
         @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
             @can('profile_password_edit')
                 <li class="c-sidebar-nav-item">
